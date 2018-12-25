@@ -8,8 +8,7 @@ def template_filler(template_filename, sheet_filename, result_filename):
     doc = Document(template_filename)
 
     # pandas to read an .xlsx as a DataFrame, then turn it into a dictionary 
-    df = pd.read_excel(sheet_filename, index_col=0)
-    d = df.to_dict()
+    d = pd.read_excel(sheet_filename, index_col=0).to_dict()
 
     # This is the main function. It takes the doc, regex object, replacement string.
     def docx_replace_regex(doc_obj, regex, replace):
